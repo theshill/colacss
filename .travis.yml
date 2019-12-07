@@ -1,0 +1,6 @@
+os: osx
+language: cpp
+compiler: clang
+script:
+  - clang++ src/main.cpp -o cmain
+  - ./cmain
