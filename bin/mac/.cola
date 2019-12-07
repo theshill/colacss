@@ -1,0 +1,40 @@
+#!/bin/bash
+
+ALL=$*
+OPTION=$1
+
+bold=$(tput bold)
+blue=$'\e[1;34m'
+gray=$'\e[1;90m'
+end=$'\e[0m'
+
+srcfile='./root.cpp'
+exefile='./bin/mac/cola'
+
+run_build() {
+  if [ -f $exefile ]; then
+    rm $exefile
+    echo "..removed previous build"
+    echo "..building new executable: ${bold}$exefile${end}"
+  else
+    echo "..no build detected"
+    echo "..building new executable: ${bold}$exefile${end}"
+  fi
+  clang++ $srcfile -o $exefile
+  echo ""
+  echo "..done"
+}
+
+run_help() {
+  echo "${blue}Usage:${end} .cola ${bold}<option>${end}"
+  echo ""
+  echo "  ${bold}build${end}     ${gray}Compile main.cpp for mac platforms${end}"
+  echo ""
+}
+
+case $OPTION in
+  b)run_build;;
+  build)run_build;;
+
+  *)run_help;;
+esac
