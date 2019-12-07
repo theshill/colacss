@@ -8,8 +8,8 @@ blue=$'\e[1;34m'
 gray=$'\e[1;90m'
 end=$'\e[0m'
 
-srcfile='./root.cpp'
-exefile='./bin/mac/cola'
+srcfile='/Users/arakilian0/startrev/colacss/root.cpp'
+exefile='/Users/arakilian0/startrev/colacss/bin/mac/cola'
 
 run_build() {
   if [ -f $exefile ]; then
