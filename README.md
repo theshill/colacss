@@ -2,7 +2,7 @@
 
 :zap: The next generation css preprocessor.
 
-[![GitHub release](https://img.shields.io/github/release/startrev/colacss.svg)](https://github.com/startrev/colacss/releases/) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/startrev/colacss) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://github.com/startrev/colacss)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://github.com/startrev/colacss) [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat)](https://github.com/startrev/colacss)
 
 ## Install
 ```
