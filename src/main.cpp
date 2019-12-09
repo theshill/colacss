@@ -4,6 +4,8 @@
 #include <array>
 
 #include "er.h"
+#include "pr.h"
+
 #include "h.h"
 #include "v.h"
 
@@ -13,9 +15,10 @@ using namespace std;
 
 int main ( int argc, char** argv ) {
 
-  Error error;
   Help help;
+  Error error;
   Version version;
+  Processor processor;
 
   string inputpath;
   bool argumentmatch = false;
@@ -41,19 +44,12 @@ int main ( int argc, char** argv ) {
       }
       // argument match
       else {
-        cout << "no file: but there were argument(s) found" << endl;
-        cout << "argument(s) found: handle here" << endl;
-      }
+        if ( inputpath == help.shortname() || inputpath == help.longname() ) { help.printhelp(); }
+        else if ( inputpath == version.shortname() || inputpath == version.longname() ) { version.printversion(); }
+      };
     }
-
     // file found
-    else {
-      cout << "file found: handle here" << endl;
-      for (int i = 0; i < APISPEC; i++) {
-        cout << APIspec[i] << endl;
-      }
-    };
-    
+    else { processor.process(argc, argv); };
   };
 
   return 0;
