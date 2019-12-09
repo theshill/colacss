@@ -8,7 +8,7 @@ blue=$'\e[1;34m'
 gray=$'\e[1;90m'
 end=$'\e[0m'
 
-srcfile='/Users/arakilian0/startrev/colacss/src/colacss.cpp'
+srcfile='/Users/arakilian0/startrev/colacss/src/main.cpp'
 exefile='/Users/arakilian0/startrev/colacss/bin/mac/cola'
 
 run_build() {
