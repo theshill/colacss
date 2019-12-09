@@ -3,6 +3,7 @@
 #include <string>
 #include <array>
 
+#include "co.h"
 #include "er.h"
 #include "pr.h"
 
@@ -19,6 +20,7 @@ int main ( int argc, char** argv ) {
   Error error;
   Version version;
   Processor processor;
+  Config conf;
 
   string inputpath;
   bool argumentmatch = false;
@@ -37,17 +39,16 @@ int main ( int argc, char** argv ) {
     // no file found
     if ( ! srcfile.is_open() ) {
       for (int i = 0; i < APISPEC; i++) { if (inputpath == APIspec[i]) { argumentmatch = true; } }
-      // no argument match
       if ( ! argumentmatch ) {
         if ( inputpath.at(0) == '-' ) { error.unknownargument(inputpath); }
         else { error.badinputfile(inputpath); }
       }
-      // argument match
       else {
         if ( inputpath == help.shortname() || inputpath == help.longname() ) { help.printhelp(); }
         else if ( inputpath == version.shortname() || inputpath == version.longname() ) { version.printversion(); }
       };
     }
+
     // file found
     else { processor.process(argc, argv); };
   };

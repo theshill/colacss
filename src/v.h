@@ -1,8 +1,11 @@
 // version flag
 #include <iostream>
+#include <fstream>
 #include <string>
 
 using namespace std;
+
+Config conf;
 
 class Version
 {
@@ -10,8 +13,9 @@ class Version
 
     string shortname () { return "-v"; };
     string longname () { return "--version"; };
-    
+
     void printversion () {
-      cout << "version 0.0.1" << endl;
+      cout << "Language: " << conf.getlangversion() << endl;
+      cout << "CLI: " << conf.getcliversion() << endl;
     };
 };
